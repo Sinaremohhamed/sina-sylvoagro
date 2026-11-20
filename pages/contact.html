@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | SINA SYLVOAGRO.SARL</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SINA SYLVOAGRO.SARL</div>
+
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="entreprise.html">Entreprise</a>
+        <a href="produits.html">Produits</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="presentation">
+
+    <h1>CONTACTEZ-NOUS</h1>
+
+    <p>
+        Une question ou une commande ?
+        Écrivez-nous directement.
+    </p>
+
+    <div class="formulaire">
+
+        <form id="contactForm">
+
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom"
+                   placeholder="Votre nom" required>
+
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone"
+                   placeholder="Votre numéro" required>
+
+            <label for="sujet">Sujet</label>
+            <select id="sujet" required>
+                <option value="">Choisir un sujet</option>
+                <option value="Commande">Commande</option>
+                <option value="Information">Demande d'information</option>
+                <option value="Partenariat">Partenariat</option>
+                <option value="Autre">Autre</option>
+            </select>
+
+            <label for="message">Votre message</label>
+            <textarea id="message"
+                      placeholder="Écrivez votre message..."
+                      rows="5" required></textarea>
+
+            <button type="submit" class="bouton">
+                Envoyer sur WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 SINA SYLVOAGRO.SARL</p>
+    <p>Tous droits réservés.</p>
+</footer>
+
+<script src="../script.js"></script>
+
+</body>
+</html>
+
