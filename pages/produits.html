@@ -4,83 +4,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07521e">
 
-    <title>Nos produits | SINA SYLVOAGRO</title>
+    <title>Nos produits | SINA SYLVOAGRO.SARL</title>
 
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .hero-produits {
+            min-height: 330px;
+            background:
+                linear-gradient(rgba(0,48,15,.82), rgba(0,48,15,.65)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85")
+                center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 65px 6%;
+            color: white;
+        }
+
+        .hero-produits h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 15px;
+        }
+
+        .hero-produits h1 span {
+            color: #e6b900;
+        }
+
+        .hero-produits p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .ligne-or {
+            width: 75px;
+            height: 4px;
+            background: #e6b900;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .catalogue-produits {
+            padding: 55px 7%;
+            background: #f5faf2;
+        }
+
+        .grille-produits {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .carte-detail {
+            overflow: hidden;
+            background: white;
+            border-radius: 17px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .carte-detail:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,.15);
+        }
+
+        .image-detail {
+            height: 220px;
+            overflow: hidden;
+            background: #dcebd6;
+        }
+
+        .image-detail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contenu-detail {
+            padding: 24px;
+        }
+
+        .badge-produit {
+            display: inline-block;
+            background: #e4f3dc;
+            color: #087c29;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 13px;
+        }
+
+        .contenu-detail h2 {
+            color: #07521e;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .contenu-detail > p {
+            line-height: 1.7;
+            color: #526452;
+            margin-bottom: 18px;
+        }
+
+        .details-produit {
+            border-top: 1px solid #e5eee3;
+            margin-top: 15px;
+            padding-top: 15px;
+        }
+
+        .detail-ligne {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin: 12px 0;
+            line-height: 1.5;
+            color: #36543a;
+            font-size: 14px;
+        }
+
+        .detail-icone {
+            font-size: 19px;
+        }
+
+        .commande-produit {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .engagements-produits {
+            padding: 50px 6%;
+            background: #eaf6e6;
+        }
+
+        .engagements-grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto 0;
+            text-align: center;
+        }
+
+        .engagement {
+            padding: 20px;
+        }
+
+        .engagement span {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .engagement h3 {
+            color: #07521e;
+            margin-bottom: 10px;
+        }
+
+        .engagement p {
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        @media(max-width: 650px) {
+            .grille-produits {
+                grid-template-columns: 1fr;
+            }
+
+            .engagements-grille {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .hero-produits {
+                min-height: 300px;
+            }
+
+            .image-detail {
+                height: 190px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">SINA SYLVOAGRO.SARL</div>
+<!-- EN-TÊTE -->
+<header class="site-header">
 
-    <nav>
+    <a href="../index.html" class="identite">
+        <img src="../images/logo.png"
+             alt="Logo SINA SYLVOAGRO"
+             class="logo-image">
+
+        <span class="nom-entreprise">
+            SINA SYLVOAGRO<span>.SARL</span>
+            <small>Agir aujourd'hui pour une agriculture durable</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal">
         <a href="../index.html">Accueil</a>
         <a href="entreprise.html">Entreprise</a>
-        <a href="produits.html">Produits</a>
+        <a href="produits.html" class="active">Produits</a>
+        <a href="../index.html#services">Services</a>
         <a href="contact.html">Contact</a>
     </nav>
+
 </header>
 
-<main class="presentation">
 
-    <h1>NOS PRODUITS AGRICOLES</h1>
+<main>
 
-    <p>
-        Découvrez les solutions proposées
-        par SINA SYLVOAGRO.SARL.
-    </p>
+<!-- PRÉSENTATION DES PRODUITS -->
+<section class="hero-produits">
 
-    <div class="catalogue">
+    <div>
+        <p class="hero-petit-titre">
+            NOS SOLUTIONS AGRICOLES
+        </p>
 
-        <article class="produit">
+        <h1>
+            Découvrez nos <span>produits</span>
+        </h1>
 
-            <h2>ANTI GOMMOSE</h2>
+        <div class="ligne-or"></div>
 
-            <p>
-                Découvrez notre produit Anti Gommose.
-            </p>
+        <p>
+            SINA SYLVOAGRO.SARL vous accompagne
+            avec des solutions destinées aux producteurs
+            et au développement d'une agriculture durable.
+        </p>
+    </div>
 
-            <a href="https://wa.me/22675740777?text=Bonjour%20SINA%20SYLVOAGRO%2C%20je%20souhaite%20commander%20le%20produit%20ANTI%20GOMMOSE."
-               class="bouton">
-                Commander sur WhatsApp
-            </a>
+</section>
 
+
+<!-- CATALOGUE -->
+<section class="catalogue-produits">
+
+    <div class="titre-section">
+        <span class="surtitre">Nos solutions</span>
+
+        <h2>Nos produits agricoles</h2>
+
+        <p>
+            Découvrez les produits proposés par
+            SINA SYLVOAGRO.SARL.
+        </p>
+    </div>
+
+
+    <div class="grille-produits">
+
+        <!-- PRODUIT 1 -->
+        <article class="carte-detail">
+
+            <div class="image-detail">
+                <img src="../images/anti-gommose.jpg"
+                     alt="Image du produit Fumier Organique">
+            </div>
+
+            <div class="contenu-detail">
+
+                <span class="badge-produit">
+                    🌱 SOLUTION AGRICOLE
+                </span>
+
+                <h2>FUMIER ORGANIQUE</h2>
+
+                <p>
+                    Découvrez notre produit Fumier Organique,
+                    proposé par SINA SYLVOAGRO.SARL
+                    pour accompagner vos activités agricoles.
+                </p>
+
+                <div class="details-produit">
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">🌿</span>
+                        <span><strong>Produit :</strong> Fumier organique</span>
+                    </div>
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">🌾</span>
+                        <span><strong>Utilisation :</strong> Renseignements auprès de notre équipe.</span>
+                    </div>
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">📦</span>
+                        <span><strong>Conditionnement :</strong> À préciser.</span>
+                    </div>
+
+                </div>
+
+                <a href="https://wa.me/22675740777?text=Bonjour%20SINA%20SYLVOAGRO%2C%20je%20souhaite%20des%20informations%20sur%20le%20FUMIER%20ORGANIQUE."
+                   class="btn btn-vert commande-produit"
+                   target="_blank"
+                   rel="noopener">
+                    Commander sur WhatsApp
+                </a>
+
+            </div>
         </article>
 
-        <article class="produit">
 
-            <h2>FLORAISON</h2>
+        <!-- PRODUIT 2 -->
+        <article class="carte-detail">
 
-            <p>
-                Découvrez notre produit Floraison.
-            </p>
+            <div class="image-detail">
+                <img src="../images/floraison.jpg"
+                     alt="Image du produit Anti-Vers">
+            </div>
 
-            <a href="https://wa.me/22675740777?text=Bonjour%20SINA%20SYLVOAGRO%2C%20je%20souhaite%20commander%20le%20produit%20FLORAISON."
-               class="bouton">
-                Commander sur WhatsApp
-            </a>
+            <div class="contenu-detail">
 
+                <span class="badge-produit">
+                    🌿 PROTECTION AGRICOLE
+                </span>
+
+                <h2>ANTI-VERS</h2>
+
+                <p>
+                    Découvrez notre produit Anti-Vers,
+                    proposé par SINA SYLVOAGRO.SARL
+                    pour accompagner la protection de vos cultures.
+                </p>
+
+                <div class="details-produit">
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">🌱</span>
+                        <span><strong>Produit :</strong> Anti-Vers</span>
+                    </div>
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">🌾</span>
+                        <span><strong>Utilisation :</strong> Renseignements auprès de notre équipe.</span>
+                    </div>
+
+                    <div class="detail-ligne">
+                        <span class="detail-icone">📦</span>
+                        <span><strong>Conditionnement :</strong> À préciser.</span>
+                    </div>
+
+                </div>
+
+                <a href="https://wa.me/22675740777?text=Bonjour%20SINA%20SYLVOAGRO%2C%20je%20souhaite%20des%20informations%20sur%20le%20produit%20ANTI-VERS."
+                   class="btn btn-vert commande-produit"
+                   target="_blank"
+                   rel="noopener">
+                    Commander sur WhatsApp
+                </a>
+
+            </div>
         </article>
 
     </div>
 
-    <p>
-        Pour obtenir des renseignements
-        sur nos produits, contactez-nous.
-    </p>
+</section>
 
-    <a href="contact.html" class="bouton">
-        Nous contacter
+
+<!-- POURQUOI NOUS CHOISIR -->
+<section class="engagements-produits">
+
+    <div class="titre-section">
+        <span class="surtitre">Nos engagements</span>
+        <h2>Pourquoi nous choisir ?</h2>
+    </div>
+
+    <div class="engagements-grille">
+
+        <div class="engagement">
+            <span>🌿</span>
+            <h3>Solutions agricoles</h3>
+            <p>
+                Des solutions destinées à accompagner
+                les besoins des producteurs.
+            </p>
+        </div>
+
+        <div class="engagement">
+            <span>🤝</span>
+            <h3>Accompagnement</h3>
+            <p>
+                Une équipe à votre écoute pour
+                vos demandes d'informations.
+            </p>
+        </div>
+
+        <div class="engagement">
+            <span>💬</span>
+            <h3>Conseils</h3>
+            <p>
+                Contactez-nous pour obtenir
+                des renseignements sur nos produits.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="appel-contact">
+
+    <div>
+        <h2>Besoin d'informations ?</h2>
+        <p>Contactez SINA SYLVOAGRO.SARL.</p>
+    </div>
+
+    <a href="https://wa.me/22675740777"
+       class="btn btn-whatsapp"
+       target="_blank"
+       rel="noopener">
+        Contacter sur WhatsApp
     </a>
+
+</section>
 
 </main>
 
-<footer>
-    <p>© 2026 SINA SYLVOAGRO.SARL</p>
-    <p>Tous droits réservés.</p>
+
+<!-- PIED DE PAGE -->
+<footer class="site-footer">
+
+    <div class="footer-contenu">
+
+        <div class="footer-identite">
+            <img src="../images/logo.png"
+                 alt="Logo SINA SYLVOAGRO"
+                 class="footer-logo">
+
+            <h3>SINA SYLVOAGRO.SARL</h3>
+
+            <p>Agir aujourd'hui pour une agriculture durable.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Nous contacter</h3>
+            <p>Téléphone / WhatsApp : +226 75 74 07 77</p>
+            <p>Ouagadougou, Burkina Faso</p>
+            <a href="contact.html">Notre page contact</a>
+        </div>
+
+        <div class="footer-liens">
+            <h3>Navigation</h3>
+            <a href="../index.html">Accueil</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="produits.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 SINA SYLVOAGRO.SARL — Tous droits réservés.
+    </div>
+
 </footer>
+
+
+<!-- WHATSAPP FLOTTANT -->
+<a href="https://wa.me/22675740777"
+   class="whatsapp-flottant"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contacter SINA SYLVOAGRO sur WhatsApp">
+    ☎
+</a>
+
+
+<script src="../script.js"></script>
 
 </body>
 </html>
