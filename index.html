@@ -1,69 +1,338 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SINA SYLVOAGRO.SARL : des solutions naturelles pour une agriculture durable et productive au Burkina Faso.">
+    <meta name="theme-color" content="#07521e">
 
-    <title>SINA SYLVOAGRO.SARL</title>
+    <title>SINA SYLVOAGRO.SARL | Agriculture durable au Burkina Faso</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            SINA SYLVOAGRO
+<!-- EN-TÊTE -->
+<header class="site-header">
+    <a href="index.html" class="identite">
+        <img src="images/logo.png" alt="Logo SINA SYLVOAGRO" class="logo-image">
+        <span class="nom-entreprise">
+            SINA SYLVOAGRO<span>.SARL</span>
+            <small>Agir aujourd'hui pour une agriculture durable</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="pages/entreprise.html">Entreprise</a>
+        <a href="pages/produits.html">Produits</a>
+        <a href="#services">Services</a>
+        <a href="pages/contact.html">Contact</a>
+    </nav>
+</header>
+
+
+<main>
+
+<!-- GRANDE SECTION D'ACCUEIL -->
+<section class="hero" id="accueil">
+
+    <div class="hero-contenu">
+        <p class="hero-petit-titre">L'agriculture de demain commence aujourd'hui</p>
+
+        <h1>
+            SINA SYLVOAGRO<span>.SARL</span>
+        </h1>
+
+        <p class="hero-description">
+            Des solutions naturelles pour une agriculture
+            durable et productive au Burkina Faso.
+        </p>
+
+        <div class="hero-boutons">
+            <a href="pages/produits.html" class="btn btn-vert">
+                Découvrir nos produits →
+            </a>
+
+            <a href="https://wa.me/22675740777"
+               class="btn btn-contour" target="_blank" rel="noopener">
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <a href="#chiffres" class="fleche-bas" aria-label="Descendre">
+        ↓
+    </a>
+</section>
+
+
+<!-- CHIFFRES CLÉS -->
+<section class="chiffres" id="chiffres">
+
+    <div class="chiffre">
+        <strong>À compléter</strong>
+        <span>Producteurs accompagnés</span>
+    </div>
+
+    <div class="chiffre">
+        <strong>2</strong>
+        <span>Produits présentés</span>
+    </div>
+
+    <div class="chiffre">
+        <strong>À préciser</strong>
+        <span>Notre engagement naturel</span>
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="section-services" id="services">
+
+    <h2>Nos services</h2>
+
+    <div class="services-grille">
+
+        <article class="service">
+            <div class="service-icone">🌿</div>
+            <div>
+                <h3>Solutions naturelles</h3>
+                <p>Des solutions adaptées aux besoins de vos cultures.</p>
+            </div>
+        </article>
+
+        <article class="service">
+            <div class="service-icone">👨‍🌾</div>
+            <div>
+                <h3>Accompagnement des producteurs</h3>
+                <p>Un soutien et des conseils pour vos activités agricoles.</p>
+            </div>
+        </article>
+
+        <article class="service">
+            <div class="service-icone">🚚</div>
+            <div>
+                <h3>Livraison</h3>
+                <p>Renseignements sur les possibilités de livraison.</p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- PRÉSENTATION DE L'ENTREPRISE -->
+<section class="presentation-accueil" id="presentation">
+
+    <div class="photo-equipe">
+        <img src="images/equipe.jpg"
+             alt="Équipe ou terrain de SINA SYLVOAGRO"
+             onerror="this.style.display='none'">
+
+        <div class="photo-placeholder">
+            <span>📷</span>
+            <p>Emplacement réservé à votre photo d'équipe ou de terrain</p>
+        </div>
+    </div>
+
+    <div class="texte-presentation">
+        <span class="surtitre">À propos de nous</span>
+        <h2>Qui sommes-nous ?</h2>
+
+        <p>
+            SINA SYLVOAGRO.SARL est une entreprise engagée
+            dans le développement d'une agriculture durable
+            et productive au Burkina Faso.
+        </p>
+
+        <p>
+            Nous proposons des solutions agricoles et souhaitons
+            accompagner les producteurs dans leurs activités.
+        </p>
+
+        <a href="pages/entreprise.html" class="btn btn-vert">
+            En savoir plus →
+        </a>
+    </div>
+
+</section>
+
+
+<!-- APERÇU DES PRODUITS -->
+<section class="section-produits" id="produits">
+
+    <div class="titre-section">
+        <span class="surtitre">Nos solutions agricoles</span>
+        <h2>Aperçu de nos produits</h2>
+        <p>Découvrez nos solutions pour accompagner vos cultures.</p>
+    </div>
+
+    <div class="produits-accueil">
+
+        <article class="carte-produit">
+            <div class="produit-photo">
+                <img src="images/anti-gommose.jpg"
+                     alt="Produit Anti Gommose"
+                     onerror="this.style.display='none'">
+                <span class="produit-placeholder">
+                    Photo Anti Gommose à ajouter
+                </span>
+            </div>
+
+            <div class="produit-infos">
+                <h3>Anti Gommose</h3>
+                <p>Description du produit à compléter.</p>
+                <a href="pages/produits.html">En savoir plus →</a>
+            </div>
+        </article>
+
+
+        <article class="carte-produit">
+            <div class="produit-photo">
+                <img src="images/floraison.jpg"
+                     alt="Produit Floraison"
+                     onerror="this.style.display='none'">
+                <span class="produit-placeholder">
+                    Photo Floraison à ajouter
+                </span>
+            </div>
+
+            <div class="produit-infos">
+                <h3>Floraison</h3>
+                <p>Description du produit à compléter.</p>
+                <a href="pages/produits.html">En savoir plus →</a>
+            </div>
+        </article>
+
+    </div>
+
+    <a href="pages/produits.html" class="btn btn-vert btn-centre">
+        Voir tous les produits →
+    </a>
+
+</section>
+
+
+<!-- POURQUOI NOUS CHOISIR -->
+<section class="section-avantages">
+
+    <div class="titre-section">
+        <span class="surtitre">Nos engagements</span>
+        <h2>Pourquoi nous choisir ?</h2>
+    </div>
+
+    <div class="avantages-grille">
+
+        <div class="avantage">
+            <span>✓</span>
+            <h3>Qualité</h3>
+            <p>Une attention portée à nos solutions.</p>
         </div>
 
-        <nav>
+        <div class="avantage">
+            <span>🌿</span>
+            <h3>Nature</h3>
+            <p>Une démarche tournée vers l'agriculture durable.</p>
+        </div>
+
+        <div class="avantage">
+            <span>🤝</span>
+            <h3>Proximité</h3>
+            <p>Un accompagnement des producteurs.</p>
+        </div>
+
+        <div class="avantage">
+            <span>💬</span>
+            <h3>Conseils</h3>
+            <p>Une écoute de vos besoins agricoles.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPEL À L'ACTION -->
+<section class="appel-contact">
+
+    <div>
+        <h2>Une question ?</h2>
+        <p>Parlez à un conseiller de SINA SYLVOAGRO.SARL.</p>
+    </div>
+
+    <a href="https://wa.me/22675740777"
+       target="_blank" rel="noopener" class="btn btn-whatsapp">
+        Contacter sur WhatsApp
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- PIED DE PAGE -->
+<footer class="site-footer">
+
+    <div class="footer-contenu">
+
+        <div class="footer-identite">
+            <img src="images/logo.png" alt="Logo SINA SYLVOAGRO"
+                 class="footer-logo">
+            <h3>SINA SYLVOAGRO.SARL</h3>
+            <p>Agir aujourd'hui pour une agriculture durable.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Nous contacter</h3>
+            <p>Téléphone / WhatsApp : +226 75 74 07 77</p>
+            <p>Localisation : Ouagadougou, Burkina Faso</p>
+            <a href="pages/contact.html">Notre page contact</a>
+        </div>
+
+        <div class="footer-liens">
+            <h3>Navigation</h3>
             <a href="index.html">Accueil</a>
             <a href="pages/entreprise.html">Entreprise</a>
             <a href="pages/produits.html">Produits</a>
             <a href="pages/contact.html">Contact</a>
-        </nav>
-    </header>
+        </div>
 
-    <main>
-        <section class="accueil">
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
 
-            <h1>
-                Bienvenue chez SINA SYLVOAGRO.SARL
-            </h1>
+    </div>
 
-            <p>
-                Des solutions agricoles naturelles
-                pour une agriculture durable et productive.
-            </p>
+    <div class="copyright">
+        © 2026 SINA SYLVOAGRO.SARL — Tous droits réservés.
+    </div>
 
-            <a href="pages/produits.html" class="bouton">
-                Découvrir nos produits
-            </a>
+</footer>
 
-        </section>
 
-        <section class="presentation">
+<!-- WHATSAPP FLOTTANT -->
+<a href="https://wa.me/22675740777"
+   class="whatsapp-flottant"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contacter SINA SYLVOAGRO sur WhatsApp">
+    ☎
+</a>
 
-            <h2>Qui sommes-nous ?</h2>
 
-            <p>
-                SINA SYLVOAGRO.SARL accompagne
-                le développement de l'agriculture
-                grâce à des solutions adaptées aux
-                besoins des producteurs.
-            </p>
-
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 SINA SYLVOAGRO.SARL</p>
-        <p>Tous droits réservés.</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
-

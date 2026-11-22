@@ -25,3 +25,30 @@ if (formulaire) {
     });
 }
 
+
+
+/* MENU MOBILE DE LA PAGE D'ACCUEIL */
+
+const menuToggle = document.getElementById("menuToggle");
+const menuPrincipal = document.getElementById("menuPrincipal");
+
+if (menuToggle && menuPrincipal) {
+
+    menuToggle.addEventListener("click", function() {
+        const ouvert = menuPrincipal.classList.toggle("ouvert");
+
+        menuToggle.setAttribute("aria-expanded", ouvert);
+        menuToggle.setAttribute(
+            "aria-label",
+            ouvert ? "Fermer le menu" : "Ouvrir le menu"
+        );
+    });
+
+    menuPrincipal.querySelectorAll("a").forEach(function(lien) {
+        lien.addEventListener("click", function() {
+            menuPrincipal.classList.remove("ouvert");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+        });
+    });
+}

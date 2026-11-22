@@ -226,3 +226,787 @@ footer {
 }
 
 
+
+/* =========================================
+   NOUVEL ACCUEIL SINA SYLVOAGRO.SARL
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 85px;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    background: #fff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.12);
+}
+
+.identite {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #07521e;
+    text-decoration: none;
+    min-width: 0;
+}
+
+.logo-image {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.nom-entreprise {
+    font-size: 21px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.nom-entreprise > span,
+.hero h1 span {
+    color: #e6b900;
+}
+
+.nom-entreprise small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #52714f;
+}
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu-principal a {
+    color: #174d2b;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.menu-principal a:hover,
+.menu-principal a.active {
+    color: #159b32;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 27px;
+    height: 3px;
+    margin: 5px;
+    border-radius: 5px;
+    background: #07521e;
+}
+
+
+/* GRANDE IMAGE D'ACCUEIL */
+
+.hero {
+    min-height: 490px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 75px 7%;
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 48, 15, .88),
+            rgba(0, 60, 15, .48),
+            rgba(0, 30, 10, .12)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85")
+        center 55% / cover no-repeat;
+}
+
+.hero-contenu {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-petit-titre {
+    color: #d8f4b9;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: white;
+}
+
+.hero-description {
+    font-size: clamp(18px, 2.5vw, 25px);
+    line-height: 1.5;
+    font-weight: bold;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero-boutons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 25px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-vert {
+    background: #13a832;
+    color: white;
+}
+
+.btn-vert:hover {
+    background: #07521e;
+    transform: translateY(-3px);
+}
+
+.btn-contour {
+    color: white;
+    border: 2px solid white;
+    background: transparent;
+}
+
+.btn-contour:hover {
+    background: white;
+    color: #07521e;
+}
+
+.fleche-bas {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    color: #07521e;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+    animation: descendre 1.5s infinite;
+}
+
+@keyframes descendre {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+}
+
+
+/* CHIFFRES CLÉS */
+
+.chiffres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #07521e;
+    color: white;
+    padding: 25px 5%;
+    text-align: center;
+}
+
+.chiffre {
+    padding: 8px 15px;
+    border-right: 1px solid rgba(255,255,255,.5);
+}
+
+.chiffre:last-child {
+    border-right: none;
+}
+
+.chiffre strong {
+    display: block;
+    color: #f2d000;
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+.chiffre span {
+    font-size: 15px;
+}
+
+
+/* SERVICES */
+
+.section-services {
+    padding: 45px 6%;
+    background: white;
+}
+
+.section-services > h2,
+.titre-section h2 {
+    text-align: center;
+    color: #07521e;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.services-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 15px;
+}
+
+.service-icone {
+    min-width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #087c29;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+}
+
+.service h3 {
+    color: #07521e;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.service p {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+
+/* PRÉSENTATION */
+
+.presentation-accueil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    padding: 60px 7%;
+    background: #eaf6e6;
+}
+
+.photo-equipe {
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #d4e8cd;
+    box-shadow: 0 5px 18px rgba(0,0,0,.12);
+}
+
+.photo-equipe img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    color: #386c3d;
+}
+
+.photo-placeholder span {
+    font-size: 45px;
+}
+
+.texte-presentation h2 {
+    font-size: 32px;
+    color: #07521e;
+    margin-bottom: 20px;
+}
+
+.texte-presentation p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.surtitre {
+    color: #168735;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* PRODUITS */
+
+.section-produits {
+    padding: 60px 7%;
+    background: #fff;
+    text-align: center;
+}
+
+.titre-section p {
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: #526452;
+}
+
+.produits-accueil {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.carte-produit {
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f5faf2;
+    box-shadow: 0 5px 18px rgba(0,0,0,.09);
+    text-align: left;
+}
+
+.produit-photo {
+    height: 210px;
+    position: relative;
+    background: #dcebd6;
+    overflow: hidden;
+}
+
+.produit-photo img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.produit-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #386c3d;
+    font-weight: bold;
+}
+
+.produit-infos {
+    padding: 20px;
+}
+
+.produit-infos h3 {
+    color: #07521e;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.produit-infos p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.produit-infos a {
+    color: #087c29;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-centre {
+    margin: 10px auto;
+}
+
+
+/* AVANTAGES */
+
+.section-avantages {
+    padding: 55px 6%;
+    background: #eaf6e6;
+}
+
+.avantages-grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.avantage {
+    padding: 15px;
+}
+
+.avantage > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+    border: 2px solid #087c29;
+    border-radius: 50%;
+    color: #087c29;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.avantage h3 {
+    color: #07521e;
+    margin-bottom: 8px;
+}
+
+.avantage p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* APPEL À L'ACTION */
+
+.appel-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 35px 7%;
+    background: #07521e;
+    color: white;
+}
+
+.appel-contact h2 {
+    margin-bottom: 8px;
+    font-size: 25px;
+}
+
+.btn-whatsapp {
+    background: #13b936;
+    color: white;
+    white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+    background: white;
+    color: #07521e;
+}
+
+
+/* PIED DE PAGE */
+
+.site-footer {
+    background: #073d19;
+    color: white;
+    padding: 40px 6% 15px;
+}
+
+.footer-contenu {
+    display: grid;
+    grid-template-columns: 1.3fr 1.3fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-identite,
+.footer-contact,
+.footer-liens,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.footer-contenu h3 {
+    color: #d8edb7;
+    margin-bottom: 8px;
+}
+
+.footer-contenu p,
+.footer-contenu a {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer-contenu a:hover {
+    color: #d8edb7;
+}
+
+.copyright {
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.3);
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* WHATSAPP FLOTTANT */
+
+.whatsapp-flottant {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #12c94b;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,.25);
+    transition: .3s;
+}
+
+.whatsapp-flottant:hover {
+    transform: scale(1.1);
+}
+
+
+/* ADAPTATION AUX TABLETTES */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 12px 4%;
+    }
+
+    .menu-principal {
+        gap: 13px;
+    }
+
+    .menu-principal a {
+        font-size: 13px;
+    }
+
+    .nom-entreprise {
+        font-size: 17px;
+    }
+
+    .services-grille {
+        gap: 8px;
+    }
+
+    .service {
+        padding: 8px;
+    }
+
+    .avantages-grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-contenu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ADAPTATION AUX TÉLÉPHONES */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        min-height: 75px;
+        padding: 8px 4%;
+    }
+
+    .logo-image {
+        width: 48px;
+        height: 48px;
+    }
+
+    .nom-entreprise {
+        font-size: 15px;
+    }
+
+    .nom-entreprise small {
+        font-size: 9px;
+        white-space: normal;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-principal {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        box-shadow: 0 8px 12px rgba(0,0,0,.12);
+    }
+
+    .menu-principal.ouvert {
+        display: flex;
+    }
+
+    .menu-principal a {
+        padding: 13px;
+        border-bottom: 1px solid #e5eee3;
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 440px;
+        padding: 65px 6%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .hero-boutons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        padding: 13px 20px;
+    }
+
+    .chiffres {
+        grid-template-columns: 1fr;
+        padding: 12px 5%;
+    }
+
+    .chiffre {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.3);
+        padding: 15px;
+    }
+
+    .chiffre:last-child {
+        border-bottom: none;
+    }
+
+    .section-services,
+    .section-produits,
+    .section-avantages {
+        padding: 40px 5%;
+    }
+
+    .services-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        padding: 12px 5px;
+    }
+
+    .presentation-accueil {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 40px 5%;
+    }
+
+    .photo-equipe {
+        min-height: 210px;
+    }
+
+    .photo-equipe img {
+        min-height: 210px;
+    }
+
+    .texte-presentation h2 {
+        font-size: 27px;
+    }
+
+    .produits-accueil {
+        grid-template-columns: 1fr;
+    }
+
+    .produit-photo {
+        height: 190px;
+    }
+
+    .avantages-grille {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .appel-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 6%;
+    }
+
+    .footer-contenu {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .whatsapp-flottant {
+        width: 53px;
+        height: 53px;
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
