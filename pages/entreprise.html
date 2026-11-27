@@ -1,54 +1,370 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre entreprise | SINA SYLVOAGRO</title>
+    <meta name="theme-color" content="#07521e">
+    <meta name="description" content="Découvrez SINA SYLVOAGRO.SARL, ses activités et ses engagements pour une agriculture durable au Burkina Faso.">
+
+    <title>Notre entreprise | SINA SYLVOAGRO.SARL</title>
+
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .hero-entreprise {
+            min-height: 330px;
+            background:
+                linear-gradient(rgba(0,48,15,.82), rgba(0,48,15,.65)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85")
+                center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 65px 6%;
+            color: white;
+        }
+
+        .hero-entreprise h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin: 15px 0;
+        }
+
+        .hero-entreprise h1 span {
+            color: #e6b900;
+        }
+
+        .hero-entreprise p {
+            max-width: 680px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .ligne-or {
+            width: 75px;
+            height: 4px;
+            background: #e6b900;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .presentation-entreprise {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 65px 7%;
+            background: white;
+        }
+
+        .entreprise-image {
+            min-height: 300px;
+            border-radius: 18px;
+            background:
+                linear-gradient(rgba(0,48,15,.15), rgba(0,48,15,.15)),
+                url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?w=1000&q=85")
+                center / cover no-repeat;
+            box-shadow: 0 5px 20px rgba(0,0,0,.12);
+        }
+
+        .entreprise-texte h2 {
+            color: #07521e;
+            font-size: 30px;
+            margin: 12px 0 18px;
+        }
+
+        .entreprise-texte p {
+            line-height: 1.8;
+            color: #526452;
+            margin-bottom: 15px;
+        }
+
+        .valeurs-entreprise {
+            padding: 55px 7%;
+            background: #eaf6e6;
+        }
+
+        .valeurs-grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 35px auto 0;
+        }
+
+        .valeur-carte {
+            background: white;
+            padding: 28px 22px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,.07);
+        }
+
+        .valeur-carte span {
+            font-size: 38px;
+        }
+
+        .valeur-carte h3 {
+            color: #07521e;
+            margin: 15px 0 10px;
+        }
+
+        .valeur-carte p {
+            color: #526452;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .mission-entreprise {
+            padding: 55px 7%;
+            text-align: center;
+            background: white;
+        }
+
+        .mission-entreprise h2 {
+            color: #07521e;
+            font-size: 30px;
+            margin: 12px 0 18px;
+        }
+
+        .mission-entreprise p {
+            max-width: 800px;
+            margin: auto;
+            color: #526452;
+            line-height: 1.8;
+        }
+
+        @media(max-width: 650px) {
+            .hero-entreprise {
+                min-height: 300px;
+            }
+
+            .presentation-entreprise {
+                grid-template-columns: 1fr;
+                padding: 40px 6%;
+                gap: 25px;
+            }
+
+            .entreprise-image {
+                min-height: 220px;
+            }
+
+            .entreprise-texte h2 {
+                font-size: 26px;
+            }
+
+            .valeurs-grille {
+                grid-template-columns: 1fr;
+            }
+
+            .valeurs-entreprise,
+            .mission-entreprise {
+                padding: 40px 6%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">SINA SYLVOAGRO.SARL</div>
+<header class="site-header">
+    <a href="../index.html" class="identite">
+        <img src="../images/logo.png"
+             alt="Logo SINA SYLVOAGRO"
+             class="logo-image">
 
-    <nav>
+        <span class="nom-entreprise">
+            SINA SYLVOAGRO<span>.SARL</span>
+            <small>Agir aujourd'hui pour une agriculture durable</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal">
         <a href="../index.html">Accueil</a>
-        <a href="entreprise.html">Entreprise</a>
+        <a href="entreprise.html" class="active">Entreprise</a>
         <a href="produits.html">Produits</a>
+        <a href="../index.html#services">Services</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<main class="presentation">
+<main>
 
-    <h1>À PROPOS DE NOUS</h1>
+    <section class="hero-entreprise">
+        <div>
+            <p class="hero-petit-titre">QUI SOMMES-NOUS ?</p>
+            <h1>À propos de <span>notre entreprise</span></h1>
+            <div class="ligne-or"></div>
+            <p>
+                Découvrez SINA SYLVOAGRO.SARL,
+                une entreprise engagée dans le développement
+                de solutions pour une agriculture durable
+                et productive au Burkina Faso.
+            </p>
+        </div>
+    </section>
 
-    <h2>SINA SYLVOAGRO.SARL</h2>
+    <section class="presentation-entreprise">
 
-    <p>
-        Bienvenue chez SINA SYLVOAGRO.SARL.
-    </p>
+        <div class="entreprise-image"
+             role="img"
+             aria-label="Paysage agricole"></div>
 
-    <p>
-        Nous développons des solutions agricoles
-        destinées à accompagner les producteurs
-        et à contribuer au développement d'une
-        agriculture durable et productive.
-    </p>
+        <div class="entreprise-texte">
+            <span class="surtitre">Notre entreprise</span>
 
-    <a href="produits.html" class="bouton">
-        Découvrir nos produits
-    </a>
+            <h2>SINA SYLVOAGRO.SARL</h2>
+
+            <p>
+                Bienvenue chez SINA SYLVOAGRO.SARL.
+            </p>
+
+            <p>
+                Nous développons des solutions agricoles
+                destinées à accompagner les producteurs
+                et à contribuer au développement d'une
+                agriculture durable et productive.
+            </p>
+
+            <p>
+                Notre objectif est de proposer des solutions
+                adaptées aux besoins du monde agricole et
+                de rester à l'écoute des producteurs.
+            </p>
+
+            <a href="produits.html" class="btn btn-vert">
+                Découvrir nos produits
+            </a>
+        </div>
+
+    </section>
+
+    <section class="mission-entreprise">
+        <span class="surtitre">Notre mission</span>
+
+        <h2>Accompagner le développement agricole</h2>
+
+        <p>
+            Nous souhaitons contribuer à une agriculture
+            plus durable et productive en mettant à
+            disposition des producteurs des solutions
+            agricoles et un accompagnement adapté à leurs
+            besoins.
+        </p>
+    </section>
+
+    <section class="valeurs-entreprise">
+
+        <div class="titre-section">
+            <span class="surtitre">Nos engagements</span>
+            <h2>Nos valeurs</h2>
+            <p>Les principes qui guident notre engagement.</p>
+        </div>
+
+        <div class="valeurs-grille">
+
+            <article class="valeur-carte">
+                <span>🌱</span>
+                <h3>Durabilité</h3>
+                <p>
+                    Encourager des pratiques et des solutions
+                    favorables à une agriculture durable.
+                </p>
+            </article>
+
+            <article class="valeur-carte">
+                <span>🤝</span>
+                <h3>Accompagnement</h3>
+                <p>
+                    Être à l'écoute des producteurs et
+                    répondre à leurs demandes.
+                </p>
+            </article>
+
+            <article class="valeur-carte">
+                <span>🌾</span>
+                <h3>Productivité</h3>
+                <p>
+                    Contribuer au développement d'une
+                    agriculture productive.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="appel-contact">
+        <div>
+            <h2>Travaillons ensemble</h2>
+            <p>Contactez SINA SYLVOAGRO.SARL pour en savoir plus.</p>
+        </div>
+
+        <a href="contact.html" class="btn btn-whatsapp">
+            Nous contacter
+        </a>
+    </section>
 
 </main>
 
-<footer>
-    <p>© 2026 SINA SYLVOAGRO.SARL</p>
-    <p>Tous droits réservés.</p>
+<footer class="site-footer">
+
+    <div class="footer-contenu">
+
+        <div class="footer-identite">
+            <img src="../images/logo.png"
+                 alt="Logo SINA SYLVOAGRO"
+                 class="footer-logo">
+            <h3>SINA SYLVOAGRO.SARL</h3>
+            <p>Agir aujourd'hui pour une agriculture durable.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Nous contacter</h3>
+            <p>Téléphone / WhatsApp : +226 75 74 07 77</p>
+            <p>Ouagadougou, Burkina Faso</p>
+            <a href="contact.html">Notre page contact</a>
+        </div>
+
+        <div class="footer-liens">
+            <h3>Navigation</h3>
+            <a href="../index.html">Accueil</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="produits.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>Suivez-nous</h3>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 SINA SYLVOAGRO.SARL — Tous droits réservés.
+    </div>
+
 </footer>
+
+<a href="https://wa.me/22675740777"
+   class="whatsapp-flottant"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contacter SINA SYLVOAGRO sur WhatsApp">
+    ☎
+</a>
+
+<script src="../script.js"></script>
 
 </body>
 </html>
-

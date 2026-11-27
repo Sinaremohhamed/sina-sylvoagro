@@ -1,80 +1,584 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07521e">
+
+    <meta name="description" content="Contactez SINA SYLVOAGRO.SARL pour vos commandes, renseignements et conseils agricoles au Burkina Faso.">
 
     <title>Contact | SINA SYLVOAGRO.SARL</title>
 
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .contact-hero {
+            min-height: 370px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 45, 15, .78), rgba(0, 45, 15, .78)),
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85")
+                center/cover no-repeat;
+        }
+
+        .contact-hero .surtitre {
+            color: #d6e9a7;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(35px, 6vw, 55px);
+            margin: 15px 0;
+            color: white;
+        }
+
+        .contact-hero h1 span {
+            color: #e5bd39;
+        }
+
+        .contact-hero .description {
+            max-width: 650px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f1f5ed;
+        }
+
+        .trait-contact {
+            width: 85px;
+            height: 4px;
+            background: #e5bd39;
+            margin: 22px auto;
+            border-radius: 10px;
+        }
+
+        .contact-section {
+            padding: 75px 6%;
+            background: #f6f9f4;
+        }
+
+        .contact-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .contact-intro .petit-titre {
+            color: #498a36;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .contact-intro h2 {
+            color: #07521e;
+            font-size: clamp(27px, 4vw, 36px);
+            margin: 12px 0;
+        }
+
+        .contact-intro p {
+            color: #667267;
+            line-height: 1.8;
+        }
+
+        .contact-layout {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .contact-infos {
+            background: linear-gradient(145deg, #07521e, #063b18);
+            color: white;
+            padding: 38px 30px;
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-infos::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            right: -75px;
+            bottom: -75px;
+        }
+
+        .contact-infos h3 {
+            font-size: 25px;
+            margin: 0 0 15px;
+            color: white;
+        }
+
+        .contact-infos .intro-infos {
+            color: #dcebdc;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 28px 0;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.12);
+            border-radius: 12px;
+            font-size: 22px;
+        }
+
+        .contact-item h4 {
+            margin: 2px 0 8px;
+            color: #e5bd39;
+            font-size: 16px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item a:hover {
+            color: #e5bd39;
+        }
+
+        .contact-form-card {
+            background: white;
+            padding: 38px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.06);
+            border: 1px solid #e9eee7;
+        }
+
+        .contact-form-card h3 {
+            color: #07521e;
+            font-size: 26px;
+            margin: 0 0 10px;
+        }
+
+        .form-description {
+            color: #718071;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .contact-form-card label {
+            display: block;
+            color: #234d2c;
+            font-weight: 600;
+            margin: 18px 0 9px;
+        }
+
+        .contact-form-card input,
+        .contact-form-card select,
+        .contact-form-card textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #dce5d9;
+            border-radius: 9px;
+            background: #fbfdf9;
+            font-size: 15px;
+            font-family: inherit;
+            color: #263a29;
+            transition: .2s;
+        }
+
+        .contact-form-card input:focus,
+        .contact-form-card select:focus,
+        .contact-form-card textarea:focus {
+            outline: none;
+            border-color: #398c43;
+            box-shadow: 0 0 0 3px rgba(57,140,67,.10);
+        }
+
+        .contact-form-card textarea {
+            min-height: 145px;
+            resize: vertical;
+        }
+
+        .contact-form-card button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 16px;
+            border: none;
+            border-radius: 9px;
+            background: #07521e;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact-form-card button:hover {
+            background: #0b7130;
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            text-align: center;
+            color: #7b887a;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .contact-bas {
+            background: white;
+            padding: 45px 6%;
+            text-align: center;
+        }
+
+        .contact-bas h2 {
+            color: #07521e;
+            font-size: 25px;
+        }
+
+        .contact-bas p {
+            color: #687568;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .contact-whatsapp {
+            display: inline-block;
+            padding: 14px 26px;
+            border-radius: 30px;
+            background: #168b42;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .contact-whatsapp:hover {
+            background: #07521e;
+        }
+
+        @media(max-width: 850px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .contact-hero {
+                min-height: 300px;
+                padding: 55px 18px;
+            }
+
+            .contact-section {
+                padding: 50px 5%;
+            }
+
+            .contact-infos,
+            .contact-form-card {
+                padding: 27px 20px;
+            }
+
+            .contact-bas {
+                padding: 35px 5%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">SINA SYLVOAGRO.SARL</div>
+<!-- EN-TÊTE -->
+<header class="site-header">
 
-    <nav>
+    <a href="../index.html" class="identite">
+        <img src="../images/logo.png"
+             alt="Logo SINA SYLVOAGRO"
+             class="logo-image">
+
+        <span class="nom-entreprise">
+            SINA SYLVOAGRO<span>.SARL</span>
+            <small>Agir aujourd'hui pour une agriculture durable</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="menu-principal" id="menuPrincipal">
         <a href="../index.html">Accueil</a>
         <a href="entreprise.html">Entreprise</a>
         <a href="produits.html">Produits</a>
-        <a href="contact.html">Contact</a>
+        <a href="../index.html#services">Services</a>
+        <a href="contact.html" class="active">Contact</a>
     </nav>
+
 </header>
 
-<main class="presentation">
+<main>
 
-    <h1>CONTACTEZ-NOUS</h1>
+    <!-- GRANDE BANNIÈRE -->
+    <section class="contact-hero">
 
-    <p>
-        Une question ou une commande ?
-        Écrivez-nous directement.
-    </p>
+        <div>
+            <span class="surtitre">SINA SYLVOAGRO.SARL</span>
 
-    <div class="formulaire">
+            <h1>Nous sommes à <span>votre écoute</span></h1>
 
-        <form id="contactForm">
+            <div class="trait-contact"></div>
 
-            <label for="nom">Nom complet</label>
-            <input type="text" id="nom"
-                   placeholder="Votre nom" required>
+            <p class="description">
+                Pour toute information, commande ou demande de renseignements,
+                notre équipe est disponible pour échanger avec vous.
+            </p>
+        </div>
 
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone"
-                   placeholder="Votre numéro" required>
+    </section>
 
-            <label for="sujet">Sujet</label>
-            <select id="sujet" required>
-                <option value="">Choisir un sujet</option>
-                <option value="Commande">Commande</option>
-                <option value="Information">Demande d'information</option>
-                <option value="Partenariat">Partenariat</option>
-                <option value="Autre">Autre</option>
-            </select>
+    <!-- SECTION CONTACT -->
+    <section class="contact-section">
 
-            <label for="message">Votre message</label>
-            <textarea id="message"
-                      placeholder="Écrivez votre message..."
-                      rows="5" required></textarea>
+        <div class="contact-intro">
 
-            <button type="submit" class="bouton">
-                Envoyer sur WhatsApp
-            </button>
+            <span class="petit-titre">Entrons en contact</span>
 
-        </form>
+            <h2>Comment pouvons-nous vous aider ?</h2>
 
-    </div>
+            <p>
+                Vous souhaitez en savoir plus sur nos produits et nos solutions
+                agricoles ? Contactez-nous directement ou envoyez-nous
+                votre demande à travers le formulaire.
+            </p>
+
+        </div>
+
+        <div class="contact-layout">
+
+            <!-- COORDONNÉES -->
+            <div class="contact-infos">
+
+                <h3>Nos coordonnées</h3>
+
+                <p class="intro-infos">
+                    Retrouvez nos informations de contact et échangeons
+                    ensemble sur vos besoins.
+                </p>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <h4>Téléphone</h4>
+                        <a href="tel:+22675740777">
+                            +226 75 74 07 77
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">💬</div>
+
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/22675740777"
+                           target="_blank"
+                           rel="noopener">
+                            Discuter avec nous
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">🌿</div>
+
+                    <div>
+                        <h4>Notre engagement</h4>
+                        <p>
+                            Agir aujourd'hui pour une agriculture durable.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULAIRE -->
+            <div class="contact-form-card">
+
+                <h3>Envoyez-nous un message</h3>
+
+                <p class="form-description">
+                    Complétez les informations ci-dessous.
+                    Votre message sera préparé directement dans WhatsApp.
+                </p>
+
+                <form id="contactForm">
+
+                    <label for="nom">Nom complet</label>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        name="nom"
+                        placeholder="Entrez votre nom"
+                        required
+                    >
+
+                    <label for="telephone">Téléphone</label>
+
+                    <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        placeholder="Votre numéro de téléphone"
+                        required
+                    >
+
+                    <label for="sujet">Objet de votre demande</label>
+
+                    <select id="sujet" name="sujet" required>
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="Informations sur les produits">
+                            Informations sur les produits
+                        </option>
+                        <option value="Commande de produits">
+                            Commande de produits
+                        </option>
+                        <option value="Conseils agricoles">
+                            Conseils agricoles
+                        </option>
+                        <option value="Partenariat">
+                            Partenariat
+                        </option>
+                        <option value="Autre demande">
+                            Autre demande
+                        </option>
+                    </select>
+
+                    <label for="message">Votre message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Écrivez votre message ici..."
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Envoyer mon message sur WhatsApp →
+                    </button>
+
+                    <p class="form-note">
+                        Votre message ne sera pas envoyé automatiquement.
+                        WhatsApp s'ouvrira pour vous permettre de le vérifier
+                        et de l'envoyer.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RAPPEL WHATSAPP -->
+    <section class="contact-bas">
+
+        <h2>Vous préférez WhatsApp ?</h2>
+
+        <p>
+            Échangez directement avec SINA SYLVOAGRO.SARL.
+        </p>
+
+        <a class="contact-whatsapp"
+           href="https://wa.me/22675740777"
+           target="_blank"
+           rel="noopener">
+            Nous contacter sur WhatsApp
+        </a>
+
+    </section>
 
 </main>
 
-<footer>
-    <p>© 2026 SINA SYLVOAGRO.SARL</p>
-    <p>Tous droits réservés.</p>
+<!-- PIED DE PAGE -->
+<footer class="site-footer">
+
+    <div class="footer-contenu">
+
+        <div class="footer-identite">
+            <h2>SINA SYLVOAGRO.SARL</h2>
+            <p>Agir aujourd'hui pour une agriculture durable.</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>+226 75 74 07 77</p>
+        </div>
+
+        <div class="footer-liens">
+            <h3>Navigation</h3>
+            <a href="../index.html">Accueil</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="produits.html">Produits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © SINA SYLVOAGRO.SARL - Tous droits réservés.
+    </p>
+
 </footer>
+
+<!-- BOUTON WHATSAPP FLOTTANT -->
+<a href="https://wa.me/22675740777"
+   class="whatsapp-flottant"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contacter sur WhatsApp">
+    WhatsApp
+</a>
 
 <script src="../script.js"></script>
 
 </body>
 </html>
-
